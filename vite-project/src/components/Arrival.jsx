@@ -8,7 +8,7 @@ function Arrival() {
     const fetchProducts = async () => {
       try {
         // अब यह URL 100% काम करेगा क्योंकि बैकएंड फिक्स हो गया है
-        const response = await fetch("http://localhost:8080/pro/products");
+        const response = await fetch("https://boots-backend.onrender.com/pro/products");
         
         if (!response.ok) {
           throw new Error(`सर्वर एरर! स्टेटस: ${response.status}`);

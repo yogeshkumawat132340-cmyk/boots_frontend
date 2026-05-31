@@ -22,7 +22,7 @@ function ProductDetail() {
     const total = cartItems.reduce((acc, item) => acc + item.quantity, 0);
     setCartCount(total);
 
-    fetch("http://localhost:8080/products")
+    fetch("https://boots-backend.onrender.com/pro/products")
       .then((res) => res.json())
       .then((data) => {
         const allProducts = data.data || [];

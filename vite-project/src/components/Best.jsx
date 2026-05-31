@@ -6,8 +6,7 @@ function BestSeller() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // यहाँ यूआरएल अगर /pro/products पर डेटा न मिले, तो सिर्फ "http://localhost:8080/pro" करके देख लेना
-    fetch("http://localhost:8080/pro/products")
+    fetch("https://boots-backend.onrender.com/pro/products")
       .then((res) => {
         if (!res.ok) {
           throw new Error("Network response was not ok");
@@ -17,7 +16,6 @@ function BestSeller() {
       .then((result) => {
         console.log("बैकएंड से आया हुआ असली डेटा:", result);
 
-        // सेफ चेक: अगर डेटा सीधे एरे है, या result.data में है, या result.products में है
         let allProducts = [];
         if (Array.isArray(result)) {
           allProducts = result;
@@ -27,7 +25,6 @@ function BestSeller() {
           allProducts = result.products;
         }
 
-        // कैटेगरी 'shoes' के हिसाब से फिल्टर करना
         const filteredShoes = allProducts.filter(
           (item) => item.category && item.category.toLowerCase() === "shoes"
         );
@@ -73,7 +70,6 @@ function BestSeller() {
             <div key={item._id} className="video-product-card">
               
               <div className="card-img-wrapper">
-                {/* अगर इमेज का पूरा URL नहीं है तो बैकएंड का पाथ जोड़ने के लिए: http://localhost:8080${item.image} */}
                 <img src={item.image} alt={item.title} />
                 
                 <button className="sliding-cart-btn" onClick={(e) => handleAddToCart(e, item)}>

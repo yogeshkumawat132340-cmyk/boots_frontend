@@ -33,7 +33,7 @@ function Signup() {
     setLoading(true);
 
     axios
-      .post("http://localhost:8080/user", {
+      .post("https://boots-backend.onrender.com/post/user", {
         username,
         email,
         mobile,

@@ -10,7 +10,7 @@ function OurShoes() {
     const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
     setCartCount(cartItems.reduce((acc, item) => acc + item.quantity, 0));
 
-    fetch("http://localhost:8080/pro/products")
+    fetch("https://boots-backend.onrender.com/pro/products")
       .then((res) => res.json())
       .then((data) => setProducts(data.data || []))
       .catch((err) => console.log("Error:", err));

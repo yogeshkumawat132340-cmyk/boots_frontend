@@ -19,7 +19,7 @@ function Cart() {
     const totalCount = savedCart.reduce((acc, item) => acc + item.quantity, 0);
     setCartCount(totalCount);
 
-    fetch("http://localhost:8080/pro/products")
+    fetch("https://boots-backend.onrender.com/pro/products")
       .then((res) => res.json())
       .then((data) => {
         const allProducts = data.data || [];

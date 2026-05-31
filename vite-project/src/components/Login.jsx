@@ -25,7 +25,7 @@ function Login() {
     }
 
     try {
-      const res = await axios.post("http://localhost:8080/post/login", data);
+      const res = await axios.post("https://boots-backend.onrender.com/post/login", data);
       alert(res.data.message);
 
       if (res.data.success) {
