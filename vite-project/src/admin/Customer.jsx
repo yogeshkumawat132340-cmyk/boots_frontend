@@ -36,7 +36,7 @@ function Customer() {
 
   async function remove(id) {
     try {
-      const response = await fetch(`https://boots-backend.onrender.com/${id}`, {
+      const response = await fetch(`https://boots-backend.onrender.com/post/user/${id}`, {
         method: "DELETE"
       });
       const result = await response.json();
@@ -64,7 +64,7 @@ function Customer() {
     const customerData = { username, email, mobile: Number(mobile), password };
     
     // एड ऑप्शन हटने के कारण URL हमेशा अपडेट आईडी वाला ही रहेगा
-    const url = `https://boots-backend.onrender.com/${editid}`;
+    const url = `https://boots-backend.onrender.com/post/user/${editid}`;
     
     try {
       const response = await fetch(url, {

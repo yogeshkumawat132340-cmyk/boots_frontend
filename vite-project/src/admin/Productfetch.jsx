@@ -61,7 +61,7 @@ function Fetch() {
     };
 
     const url = editid
-      ? `https://boots-backend.onrender.com/${editid}`
+      ? `https://boots-backend.onrender.com/pro/products/${editid}`
       : "https://boots-backend.onrender.com/pro/products";
 
     const method = editid ? "PUT" : "POST";
