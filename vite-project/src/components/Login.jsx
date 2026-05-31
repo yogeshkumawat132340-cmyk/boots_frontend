@@ -24,11 +24,21 @@ function Login() {
       return alert("Fill all fields");
     }
 
+    // 👑 ADMIN BYPASS LOGIC (Aapke root path /admin/dashboard se match kiya hai)
+    if (data.username === "admin" && data.password === "admin123") {
+      alert("Welcome Back, Admin! 👑");
+      localStorage.setItem("role", "admin");
+      navigate("/admin/dashboard"); // Ekdum sahi route!
+      return; 
+    }
+
+    // 👤 NORMAL USER LOGIN LOGIC
     try {
       const res = await axios.post("https://boots-backend.onrender.com/post/login", data);
       alert(res.data.message);
 
       if (res.data.success) {
+        localStorage.setItem("role", "user"); 
         navigate("/home");
       }
     } catch (error) {
