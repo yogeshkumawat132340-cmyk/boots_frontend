@@ -79,6 +79,25 @@ body {
     display: block;
   }
 
+  @media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Ensure right-icons are always visible and positioned correctly */
+  .right-icons {
+    display: flex !important; 
+    order: 2; /* Isse cart icon hamburger se pehle ya baad me sahi position par rahega */
+    margin-right: 15px;
+  }
+
+  .hamburger {
+    order: 3; /* Hamburger ko aakhir me rakhne ke liye */
+  }
+
+}
   .nav-links {
     position: absolute;
     top: 70px;

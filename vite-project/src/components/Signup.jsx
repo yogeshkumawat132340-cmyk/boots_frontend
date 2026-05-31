@@ -41,7 +41,6 @@ function Signup() {
       })
 
       .then((res) => {
-        alert(res.data.message);
 
         setFormData({
           username: "",
