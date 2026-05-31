@@ -10,7 +10,7 @@ function Dashboard() {
   // 📦 1. Products की Length काउंट करने के लिए GET फंक्शन
   async function fetchProductCount() {
     try {
-      const response = await fetch("http://localhost:8080/products");
+      const response = await fetch("https://boots-backend.onrender.com/pro/products");
       const result = await response.json();
       
       if (result.success && result.data) {
@@ -28,7 +28,7 @@ function Dashboard() {
   // 👥 2. Customers की Length काउंट करने के लिए GET फंक्शन
   async function fetchCustomerCount() {
     try {
-      const response = await fetch("http://localhost:8080/user");
+      const response = await fetch("https://boots-backend.onrender.com/post/user");
       const result = await response.json();
       
       if (result.success && result.data) {
