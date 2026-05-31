@@ -21,7 +21,7 @@ function Customer() {
   // 📤 1. Fetch All Customers Data (आपके GET /user रूट से सिंक)
   async function datasign() {
     try {
-      const response = await fetch("http://localhost:8080/user");
+      const response = await fetch("https://boots-backend.onrender.com/post/user");
       const result = await response.json();
       
       if (result.success && result.data) {
@@ -36,7 +36,7 @@ function Customer() {
 
   async function remove(id) {
     try {
-      const response = await fetch(`http://localhost:8080/user/${id}`, {
+      const response = await fetch(`https://boots-backend.onrender.com/${id}`, {
         method: "DELETE"
       });
       const result = await response.json();
@@ -64,7 +64,7 @@ function Customer() {
     const customerData = { username, email, mobile: Number(mobile), password };
     
     // एड ऑप्शन हटने के कारण URL हमेशा अपडेट आईडी वाला ही रहेगा
-    const url = `http://localhost:8080/user/${editid}`;
+    const url = `https://boots-backend.onrender.com/${editid}`;
     
     try {
       const response = await fetch(url, {

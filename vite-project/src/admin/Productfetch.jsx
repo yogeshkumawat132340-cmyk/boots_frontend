@@ -24,7 +24,7 @@ function Fetch() {
   // 📤 1. FETCH ALL PRODUCTS (GET)
   async function prget() {
     try {
-      const response = await fetch("http://localhost:8080/products");
+      const response = await fetch("https://boots-backend.onrender.com/pro/products");
       const result = await response.json();
       
       if (result.success && result.data) {
@@ -61,8 +61,8 @@ function Fetch() {
     };
 
     const url = editid
-      ? `http://localhost:8080/products/${editid}`
-      : "http://localhost:8080/products";
+      ? `https://boots-backend.onrender.com/${editid}`
+      : "https://boots-backend.onrender.com/pro/products";
 
     const method = editid ? "PUT" : "POST";
 
@@ -90,7 +90,7 @@ function Fetch() {
   // ❌ 3. DELETE PRODUCT FUNCTION (DELETE)
   async function remove(id) {
     try {
-      const response = await fetch(`http://localhost:8080/products/${id}`, {
+      const response = await fetch(`https://boots-backend.onrender.com/pro/products/${id}`, {
         method: "DELETE"
       });
       const result = await response.json();
