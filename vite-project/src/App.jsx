@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {  Routes, Route, HashRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import ProductDetail from "./components/ProductDetail";
 import Cart from "./components/Cart";
@@ -15,7 +15,7 @@ import Fetch from "./admin/Productfetch";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Signup />} />
         <Route path="/signup" element={<Signup />} />
@@ -31,7 +31,7 @@ function App() {
         <Route path="/adminproducts" element={<Fetch />} />
         
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

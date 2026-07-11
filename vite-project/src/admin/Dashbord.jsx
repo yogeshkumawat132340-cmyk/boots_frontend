@@ -43,7 +43,6 @@ function Dashboard() {
     }
   }
 
-  // पेज लोड होते ही दोनों फंक्शंस चलेंगे
   useEffect(() => {
     fetchProductCount();
     fetchCustomerCount();
@@ -52,7 +51,6 @@ function Dashboard() {
   return (
     <div className="admin-panel-layout-wrapper">
       
-      {/* 1. LEFT SIDEBAR SECTION */}
       <aside className="admin-sidebar-navigation">
         <div className="admin-brand-logo-frame">
           <h2>BOOTS</h2>
@@ -74,18 +72,15 @@ function Dashboard() {
         </nav>
       </aside>
 
-      {/* 2. RIGHT SIDE WORKSPACE CANVAS */}
       <main className="admin-workspace-content-canvas">
         <section className="admin-core-render-viewport">
           
-          {/* DASHBOARD HEADER */}
           <header className="dashboard-header">
             <div className="header-text-block">
               <h1 className="admin-main-view-heading">Welcome Back, Admin</h1>
               <p className="admin-subheading">Here is what's happening with your store today.</p>
             </div>
             
-            {/* ⚡ QUICK ACTIONS BUTTONS */}
             <div className="dashboard-quick-actions">
               <Link to="/adminproducts" className="add-premium-cust-btn quick-action-btn">
                 + Inventory Setup
@@ -96,7 +91,6 @@ function Dashboard() {
             </div>
           </header>
 
-          {/* REAL TIME STATISTICS CARDS GRID */}
           <div className="admin-statistics-cards-grid">
             
             {/* Card 1: Total Customers */}
@@ -106,7 +100,6 @@ function Dashboard() {
               <p>Total Customers</p>
             </div>
 
-            {/* Card 2: Total Products */}
             <div className="stat-card-box">
               <div className="stat-card-icon">📦</div>
               <h3>{loading.products ? "..." : productCount}</h3>
@@ -114,7 +107,6 @@ function Dashboard() {
             </div>
 
 
-            {/* Card 4: Monthly Revenue */}
             <div className="stat-card-box revenue-card">
               <div className="stat-card-icon">💰</div>
               <h3 className="revenue-amount">$14,250</h3>
@@ -123,10 +115,8 @@ function Dashboard() {
 
           </div>
 
-          {/* TWO COLUMN CONTENT AREA */}
           <div className="dashboard-double-column-layout">
             
-            {/* LEFT COLUMN: RECENT ORDERS TABLE */}
             <div className="recent-orders-section">
               <h2 className="section-title">Recent Activity & Sales</h2>
               
@@ -198,7 +188,6 @@ function Dashboard() {
                 </ul>
               </div>
 
-              {/* Box 2: Quick Store Stats */}
               <div className="alert-card-box system-status-box">
                 <h4 className="alert-title-dark">📌 Store Status</h4>
                 <p className="system-status-text">

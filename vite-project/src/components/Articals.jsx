@@ -35,7 +35,6 @@ function Articles() {
       >
         {articles.map((item) => (
           <SwiperSlide key={item.id}>
-            {/* Pure article card ko ek dynamic Link bana diya */}
             <Link to={`/product/${item.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
               <div className="article-card" style={{ cursor: 'pointer' }}>
                 <div className="article-img-box">

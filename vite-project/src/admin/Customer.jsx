@@ -6,7 +6,6 @@ function Customer() {
   const [showForm, setShowForm] = useState(false);
   const [deleteconfirm, setdeleteconfirm] = useState(null);
 
-  // Mongoose Schema के अनुसार 4 फ़ील्ड्स के स्टेट्स
   const [username, setusername] = useState("");
   const [email, setemail] = useState("");
   const [mobile, setmobile] = useState(""); 
@@ -18,7 +17,6 @@ function Customer() {
     datasign();
   }, []);
 
-  // 📤 1. Fetch All Customers Data (आपके GET /user रूट से सिंक)
   async function datasign() {
     try {
       const response = await fetch("https://boots-backend.onrender.com/post/user");
@@ -52,7 +50,6 @@ function Customer() {
     }
   }
 
-  // 📥 3. Form Submit handler (अब यह सिर्फ PUT / Update करेगा)
   async function submit(e) {
     e.preventDefault();
 
@@ -63,12 +60,11 @@ function Customer() {
 
     const customerData = { username, email, mobile: Number(mobile), password };
     
-    // एड ऑप्शन हटने के कारण URL हमेशा अपडेट आईडी वाला ही रहेगा
     const url = `https://boots-backend.onrender.com/post/user/${editid}`;
     
     try {
       const response = await fetch(url, {
-        method: "PUT", // केवल PUT मेथड का उपयोग होगा
+        method: "PUT", 
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(customerData)
       });
@@ -108,7 +104,6 @@ function Customer() {
   return (
     <div className="admin-panel-layout-wrapper">
       
-      {/* SIDEBAR BLOCK */}
       <aside className="admin-sidebar-navigation">
                 <div className="admin-brand-logo-frame">
           <h2>BOOTS</h2>
@@ -130,16 +125,13 @@ function Customer() {
         </nav>
       </aside>
 
-      {/* CORE CUSTOMERS CANVAS */}
       <main className="admin-workspace-content-canvas">
         <section className="admin-core-render-viewport">
           
           <div className="customer-view-header-row">
             <h1>Customers Directory</h1>
-            {/* 🛑 यहाँ से "+ Add Customer" वाला बटन हटा दिया गया है */}
           </div>
 
-          {/* CUSTOMERS DATA TABLE */}
           <div className="admin-table-container-card">
             <table className="admin-custom-data-table">
               <thead>
@@ -179,12 +171,10 @@ function Customer() {
         </section>
       </main>
 
-      {/* DYNAMIC OPERATION POPUP MODAL (Add / Edit Form) */}
       {showForm && (
         <div className="modal-overlay-blur">
           <div className="modal-workspace-card">
             <div className="modal-card-header">
-              {/* 📝 टाइटल को हमेशा के लिए "Modify Profile" कर दिया है */}
               <h2>Modify Profile</h2>
               <button className="modal-close-icon-btn" onClick={clearForm}>&times;</button>
             </div>
@@ -212,7 +202,6 @@ function Customer() {
 
               <div className="modal-action-footer-buttons">
                 <button type="button" className="btn-secondary-cancel" onClick={clearForm}>Discard</button>
-                {/* 📝 सबमिट बटन का टेक्स्ट भी हमेशा "Save Changes" रहेगा */}
                 <button type="submit" className="btn-primary-submit">Save Changes</button>
               </div>
             </form>
@@ -220,7 +209,6 @@ function Customer() {
         </div>
       )}
 
-      {/* CONFIRM DELETE MODAL */}
       {deleteconfirm && (
         <div className="modal-overlay-blur">
           <div className="delete-alert-popup-box">

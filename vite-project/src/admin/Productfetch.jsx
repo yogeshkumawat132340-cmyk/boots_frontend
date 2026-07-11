@@ -21,7 +21,6 @@ function Fetch() {
     setProduct({ ...product, [name]: value });
   }
 
-  // 📤 1. FETCH ALL PRODUCTS (GET)
   async function prget() {
     try {
       const response = await fetch("https://boots-backend.onrender.com/pro/products");
@@ -43,7 +42,6 @@ function Fetch() {
     prget();
   }, []);
 
-  // 📥 2. FORM SUBMIT HANDLER (POST / PUT)
   async function submit(e) {
     e.preventDefault();
 
@@ -87,7 +85,6 @@ function Fetch() {
     }
   }
 
-  // ❌ 3. DELETE PRODUCT FUNCTION (DELETE)
   async function remove(id) {
     try {
       const response = await fetch(`https://boots-backend.onrender.com/pro/products/${id}`, {
